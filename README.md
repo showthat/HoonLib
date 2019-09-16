@@ -22,7 +22,7 @@ pod 'HoonLib'
 
 ## Author
 
-DongHoon, dhlee@enliple.com
+showthat, emforhs7605@gmail.com
 
 ## License
 
