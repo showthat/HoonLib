@@ -58,7 +58,7 @@ import CryptoSwift
 
 extension String {
     
-    public func hmac(key: String = "1234567890") -> String? {
+    public func hmac(key: String) -> String? {
         do {    
             let encrypted = try HMAC(key: key, variant: .sha256).authenticate(self.bytes)
             let encryptedData = Data(encrypted)
