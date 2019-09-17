@@ -73,7 +73,7 @@ extension String {
     }
     
     
-    func toFormattedCurrency() -> String {
+    func toFormattedCurrencyWON() -> String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         formatter.groupingSeparator = ","

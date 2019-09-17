@@ -31,6 +31,9 @@ Pod::Spec.new do |s|
   
   s.source_files = 'HoonLib/Classes/**/*'
   
+  s.dependency 'CryptoSwift'
+  
+  
   # s.resource_bundles = {
   #   'HoonLib' => ['HoonLib/Assets/*.png']
   # }
