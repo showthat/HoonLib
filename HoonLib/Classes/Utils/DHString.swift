@@ -6,7 +6,7 @@
 
 extension String {
     
-    func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
+    public func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
         let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
         let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [.font: font], context: nil)
         
@@ -14,28 +14,28 @@ extension String {
     }
     
     
-    func width(withConstrainedHeight height: CGFloat, font: UIFont) -> CGFloat {
+    public func width(withConstrainedHeight height: CGFloat, font: UIFont) -> CGFloat {
         let constraintRect = CGSize(width: .greatestFiniteMagnitude, height: height)
         let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [.font: font], context: nil)
         
         return ceil(boundingBox.width)
     }
     
-    func localized(bundle: Bundle = .main) -> String {
+    public func localized(bundle: Bundle = .main) -> String {
         let table: String = "Localizable"
         
         return NSLocalizedString(self, tableName: table, value: "**\(self)**", comment: "")
     }
     
     
-    func isEmail() -> Bool {
+    public func isEmail() -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         
         return emailTest.evaluate(with: self)
     }
     
-    func isPasswordFormatted() -> Bool {
+    public func isPasswordFormatted() -> Bool {
         let characterSetAlphabet:CharacterSet = CharacterSet.init(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ")
         let characterSetSpecial:CharacterSet = CharacterSet.init(charactersIn: "!@#$%^&*()")
         let characterSetNumber:CharacterSet = CharacterSet.init(charactersIn: "0123456789")
@@ -43,7 +43,7 @@ extension String {
         return self.rangeOfCharacter(from: characterSetAlphabet) != nil && self.rangeOfCharacter(from: characterSetSpecial) != nil && self.rangeOfCharacter(from: characterSetNumber) != nil
     }
     
-    func isUserIDFormatted() -> Bool {
+    public func isUserIDFormatted() -> Bool {
         do {
             let regex = try NSRegularExpression(pattern: "^[a-zA-Z0-9//s]{5,12}$", options: .caseInsensitive)
             return 0 != regex.numberOfMatches(in: self, options: [], range: NSMakeRange(0, self.count))
@@ -53,7 +53,7 @@ extension String {
         }
     }
     
-    func isEmailFormatted() -> Bool {
+    public func isEmailFormatted() -> Bool {
         do {
             let regex = try NSRegularExpression(pattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}", options: .caseInsensitive)
             return 0 != regex.numberOfMatches(in: self, options: [], range: NSMakeRange(0, self.count))
@@ -63,7 +63,7 @@ extension String {
         }
     }
     
-    func formattedDate(date:Date, format:String) -> String {
+    public func formattedDate(date:Date, format:String) -> String {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
@@ -73,7 +73,7 @@ extension String {
     }
     
     
-    func toFormattedCurrencyWON() -> String {
+    public func toFormattedCurrencyWON() -> String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         formatter.groupingSeparator = ","
@@ -83,7 +83,7 @@ extension String {
         return formatter.string(from: NSNumber.init(value: Double(string) ?? 0)) ?? "0"
     }
     
-    static func randomString() -> String {
+    public static func randomString() -> String {
         let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         let random : NSMutableString = NSMutableString(capacity: 4)
         
@@ -98,7 +98,7 @@ extension String {
     }
     
     
-    func toPhonenumberFormat() -> String {
+    public func toPhonenumberFormat() -> String {
         if self.count == 11 || self.count == 10 {
             let firstIndex = self.index(self.startIndex, offsetBy: 3)
             let midIndex = self.index(firstIndex, offsetBy: 4)
@@ -111,7 +111,7 @@ extension String {
         }
     }
     
-    func toBirthdayFormat() -> String {
+    public func toBirthdayFormat() -> String {
         if self.count == 6 || self.count == 8 {
             let firstIndex = self.index(self.endIndex, offsetBy: -4)
             let midIndex = self.index(firstIndex, offsetBy: 2)
@@ -125,7 +125,7 @@ extension String {
     
     
     // Url percent encoding according to RFC3986 specifications
-    func urlPercentEncoded(withAllowedCharacters allowedCharacters: CharacterSet, encoding: String.Encoding) -> String {
+    public func urlPercentEncoded(withAllowedCharacters allowedCharacters: CharacterSet, encoding: String.Encoding) -> String {
         var returnStr = ""
         
         // Compute each char seperatly
