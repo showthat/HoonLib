@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HoonLib'
-  s.version          = '0.1.0'
+  s.version          = '0.1.2'
   s.summary          = 'A short description of HoonLib.'
 
 # This description is used to generate tags and improve search results.
@@ -30,6 +30,9 @@ Pod::Spec.new do |s|
   s.swift_version = '4.0'
   
   s.source_files = 'HoonLib/Classes/**/*'
+  
+  s.dependency 'CryptoSwift'
+  
   
   # s.resource_bundles = {
   #   'HoonLib' => ['HoonLib/Assets/*.png']

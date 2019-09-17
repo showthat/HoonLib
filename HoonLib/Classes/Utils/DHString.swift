@@ -36,18 +36,11 @@ extension String {
     }
     
     func isPasswordFormatted() -> Bool {
-        //지정된 문자셋을 각각 포함하는 것으로 확인.
-        //영문, 숫자, 특수문자를 모두 포함해야 하는 조건으로 처리한다.
         let characterSetAlphabet:CharacterSet = CharacterSet.init(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ")
         let characterSetSpecial:CharacterSet = CharacterSet.init(charactersIn: "!@#$%^&*()")
         let characterSetNumber:CharacterSet = CharacterSet.init(charactersIn: "0123456789")
         
         return self.rangeOfCharacter(from: characterSetAlphabet) != nil && self.rangeOfCharacter(from: characterSetSpecial) != nil && self.rangeOfCharacter(from: characterSetNumber) != nil
-        
-        //        
-        //        //지정된 문자외 입력된 문자를 검출하여 확인.
-        //        let characterSet:CharacterSet = CharacterSet.init(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ!@#$%^&*()0123456789")
-        //        return self.rangeOfCharacter(from: characterSet.inverted) == nil
     }
     
     func isUserIDFormatted() -> Bool {
@@ -80,7 +73,7 @@ extension String {
     }
     
     
-    func toFormattedCurrency() -> String {
+    func toFormattedCurrencyWON() -> String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         formatter.groupingSeparator = ","
@@ -92,16 +85,16 @@ extension String {
     
     static func randomString() -> String {
         let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-        var random : NSMutableString = NSMutableString(capacity: 4)
+        let random : NSMutableString = NSMutableString(capacity: 4)
         
         for _ in 0..<4 {
-            var length = UInt32 (letters.length)
-            var rand = arc4random_uniform(length)
+            let length = UInt32 (letters.length)
+            let rand = arc4random_uniform(length)
             
             random.appendFormat("%C", letters.character(at: Int(rand)))
         }
         
-        return random as! String
+        return (random as String)
     }
     
     
