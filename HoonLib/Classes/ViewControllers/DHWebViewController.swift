@@ -32,8 +32,9 @@ class DHWebViewController: UIViewController {
         super.viewDidLoad()
     }
 
+    
     @IBAction func clickedBackButton(_ sender: Any) {
-        
+        self.hlDismiss()
     }
     
 }
