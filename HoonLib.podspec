@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HoonLib'
-  s.version          = '0.1.6'
+  s.version          = '0.1.7'
   s.summary          = 'My Librarys'
 
 # This description is used to generate tags and improve search results.
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = "테스트용 라이브러리 pod 프로젝트"
+  s.description      = '테스트용 라이브러리 pod 프로젝트'
 
   s.homepage         = 'https://github.com/showthat/HoonLib'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
@@ -32,13 +32,14 @@ Pod::Spec.new do |s|
   s.source_files = 'HoonLib/Classes/**/*'
   
   s.dependency 'CryptoSwift'
-  
-  
-  # s.resource_bundles = {
-  #   'HoonLib' => ['HoonLib/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+  
+  s.resource_bundles = {
+     'HoonLib' => ['HoonLib/Assets/*.png', 
+                   'HoonLib/Assets/*.xib',
+                   'HoonLib/Classes/**/*.xib']
+  }
+
+  # s.frameworks = 'UIKit', 'MapKit'
+  
 end
