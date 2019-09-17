@@ -13,8 +13,7 @@ public class DHViewControllerPresenter {
     
     public func showWebViewController(parent:UIViewController, url:String, isPush:Bool = false, animated:Bool = true, completion: (() -> Void)? = nil) {
         
-        let vc = DHWebViewController.init(nibName: "DHWebViewController", bundle: Bundle.main)
-        
+        let vc = DHWebViewController.init(url:url)
         parent.hlPresent(vc: vc, isPush: isPush, animated: animated, completion: completion)
     }
 }
