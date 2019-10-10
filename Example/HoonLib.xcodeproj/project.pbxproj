@@ -14,6 +14,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		6A6899FC233B43A200F5A42E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6899FB233B43A200F5A42E /* WebKit.framework */; };
 		F51E9D282473682F1CCD5D25 /* Pods_HoonLib_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC272EB7BFCB4548DB0B4646 /* Pods_HoonLib_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		68498F1D592F8522F6A0DAE5 /* Pods_HoonLib_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoonLib_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A6899FB233B43A200F5A42E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		6C730D5538EB29FDFEFBB225 /* HoonLib.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HoonLib.podspec; path = ../HoonLib.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6E0C78AD13B3A50B3E404C30 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		A471F428E00CF6CF4BAD06B0 /* Pods-HoonLib_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoonLib_Example.debug.xcconfig"; path = "Target Support Files/Pods-HoonLib_Example/Pods-HoonLib_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A6899FC233B43A200F5A42E /* WebKit.framework in Frameworks */,
 				4EA87D99EEBA418B4B637DAC /* Pods_HoonLib_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,6 +156,7 @@
 		DF77DACA196EFB071A0A2E56 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6A6899FB233B43A200F5A42E /* WebKit.framework */,
 				68498F1D592F8522F6A0DAE5 /* Pods_HoonLib_Example.framework */,
 				BC272EB7BFCB4548DB0B4646 /* Pods_HoonLib_Tests.framework */,
 			);
@@ -274,14 +278,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-HoonLib_Example/Pods-HoonLib_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/HoonLib/HoonLib.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HoonLib.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,7 +458,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -502,7 +504,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

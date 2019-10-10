@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,35 +12,45 @@
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="HoonLib_Example" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VzC-uO-DGQ">
-                                <rect key="frame" x="31" y="35" width="313" height="45"/>
+                            <wkWebView contentMode="scaleToFill" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aek-Z4-Orv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences" javaScriptCanOpenWindowsAutomatically="YES"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YpI-hN-doD" customClass="DHChatBotButton" customModule="HoonLib">
+                                <rect key="frame" x="315" y="60" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="dRo-iP-iYP"/>
+                                    <constraint firstAttribute="width" constant="50" id="Afk-oc-7cc"/>
+                                    <constraint firstAttribute="height" constant="50" id="mS3-es-ong"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="showButtonClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Aqk-tL-3rr"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="VzC-uO-DGQ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="15" id="Jb6-zD-byS"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="VzC-uO-DGQ" secondAttribute="trailing" constant="15" id="VZB-Bb-ueZ"/>
-                            <constraint firstItem="VzC-uO-DGQ" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="15" id="vxY-eW-exn"/>
+                            <constraint firstItem="N9n-BM-AIV" firstAttribute="trailing" secondItem="YpI-hN-doD" secondAttribute="trailing" constant="10" id="0Ti-7b-Mdl"/>
+                            <constraint firstItem="aek-Z4-Orv" firstAttribute="leading" secondItem="N9n-BM-AIV" secondAttribute="leading" id="7oW-V7-0pZ"/>
+                            <constraint firstItem="aek-Z4-Orv" firstAttribute="top" secondItem="N9n-BM-AIV" secondAttribute="top" id="GpD-9s-Zgl"/>
+                            <constraint firstItem="YpI-hN-doD" firstAttribute="top" secondItem="N9n-BM-AIV" secondAttribute="top" constant="60" id="J3t-WP-IKq"/>
+                            <constraint firstItem="N9n-BM-AIV" firstAttribute="bottom" secondItem="aek-Z4-Orv" secondAttribute="bottom" id="fJP-vT-obg"/>
+                            <constraint firstItem="N9n-BM-AIV" firstAttribute="trailing" secondItem="aek-Z4-Orv" secondAttribute="trailing" id="mX9-tB-BO8"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="N9n-BM-AIV"/>
                     </view>
+                    <connections>
+                        <outlet property="chatbotButton" destination="YpI-hN-doD" id="wuQ-aH-y62"/>
+                        <outlet property="wkWebView" destination="aek-Z4-Orv" id="Mcl-oU-bWn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-367" y="44"/>
         </scene>
     </scenes>
 </document>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment version="4352" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DHChatBotButton" customModule="HoonLib" customModuleProvider="target">
+            <connections>
+                <outlet property="floatButtonView" destination="s2Z-Xh-3cb" id="GUu-5M-3TZ"/>
+                <outlet property="messageView" destination="caO-dF-0Qx" id="STu-L6-Ijq"/>
+                <outlet property="subViewRoot" destination="RyO-d2-lPX" id="hKt-iF-8h8"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="29"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RyO-d2-lPX">
+                    <rect key="frame" x="139" y="0.0" width="61" height="29"/>
+                    <subviews>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="caO-dF-0Qx">
+                            <rect key="frame" x="0.0" y="0.0" width="32" height="29"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6HB-zt-ipy">
+                                    <rect key="frame" x="5" y="0.0" width="22" height="14.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="6HB-zt-ipy" secondAttribute="bottom" id="URF-JF-sAa"/>
+                                <constraint firstItem="6HB-zt-ipy" firstAttribute="top" secondItem="caO-dF-0Qx" secondAttribute="top" id="ef2-wv-7Ox"/>
+                                <constraint firstItem="6HB-zt-ipy" firstAttribute="leading" secondItem="caO-dF-0Qx" secondAttribute="leading" constant="5" id="iTW-4G-Onb"/>
+                                <constraint firstAttribute="trailing" secondItem="6HB-zt-ipy" secondAttribute="trailing" constant="5" id="xlO-Ra-0rD"/>
+                            </constraints>
+                        </view>
+                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="qrcode" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="s2Z-Xh-3cb">
+                            <rect key="frame" x="32" y="1" width="29" height="27"/>
+                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="s2Z-Xh-3cb" secondAttribute="height" multiplier="1:1" id="JmG-Xm-ONH"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="s2Z-Xh-3cb" secondAttribute="bottom" id="3My-Fs-gxg"/>
+                        <constraint firstItem="s2Z-Xh-3cb" firstAttribute="top" secondItem="RyO-d2-lPX" secondAttribute="top" id="BnO-fT-KLi"/>
+                        <constraint firstAttribute="trailing" secondItem="s2Z-Xh-3cb" secondAttribute="trailing" id="lSc-Ws-kcg"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="RyO-d2-lPX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Ewm-V4-MvG"/>
+                <constraint firstAttribute="bottom" secondItem="RyO-d2-lPX" secondAttribute="bottom" id="Xcy-Ju-vmx"/>
+                <constraint firstAttribute="trailing" secondItem="RyO-d2-lPX" secondAttribute="trailing" id="oJa-y5-UfZ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="-56" y="-175.86206896551727"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="qrcode" catalog="system" width="64" height="56"/>
+    </resources>
+</document>

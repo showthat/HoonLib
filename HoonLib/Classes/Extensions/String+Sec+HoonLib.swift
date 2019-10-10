@@ -5,7 +5,7 @@
 //  Created by showthat on 17/09/2019.
 //
 
-import CryptoSwift
+//import CryptoSwift
 
 
 
@@ -58,48 +58,48 @@ import CryptoSwift
 
 extension String {
     
-    public func hmac(key: String) -> String? {
-        do {    
-            let encrypted = try HMAC(key: key, variant: .sha256).authenticate(self.bytes)
-            let encryptedData = Data(encrypted)
-            return encryptedData.toHexString()
-        } catch {
-            return nil
-        }
-    }
-    
-    public func aesEncrypt(key: String, iv: String) -> String? {
-        
-        let data = self.data(using: .utf8)!
-        
-        var encrypted:[UInt8]?
-        do {    
-            encrypted = try AES(key: key.bytes, blockMode: CBC(iv: iv.bytes), padding: .pkcs7).encrypt([UInt8](data))
-        } catch {
-            return nil
-        }
-        
-        let encryptedData = Data(encrypted!)
-        return encryptedData.base64EncodedString()
-        
-    }
-    
-    public func aesDecrypt(key: String, iv: String) -> String? {
-        
-        let data = Data(base64Encoded: self)!
-        
-        var decrypted:[UInt8]?
-        do {    
-            decrypted = try AES(key: key.bytes, blockMode: CBC(iv: iv.bytes), padding: .pkcs7).decrypt([UInt8](data))
-            
-        } catch  {
-            return nil
-        }
-        
-        let decryptedData = Data(decrypted!)
-        return String(bytes: decryptedData.bytes, encoding: .utf8)
-        
-    }
+//    public func hmac(key: String) -> String? {
+//        do {    
+//            let encrypted = try HMAC(key: key, variant: .sha256).authenticate(self.bytes)
+//            let encryptedData = Data(encrypted)
+//            return encryptedData.toHexString()
+//        } catch {
+//            return nil
+//        }
+//    }
+//    
+//    public func aesEncrypt(key: String, iv: String) -> String? {
+//        
+//        let data = self.data(using: .utf8)!
+//        
+//        var encrypted:[UInt8]?
+//        do {    
+//            encrypted = try AES(key: key.bytes, blockMode: CBC(iv: iv.bytes), padding: .pkcs7).encrypt([UInt8](data))
+//        } catch {
+//            return nil
+//        }
+//        
+//        let encryptedData = Data(encrypted!)
+//        return encryptedData.base64EncodedString()
+//        
+//    }
+//    
+//    public func aesDecrypt(key: String, iv: String) -> String? {
+//        
+//        let data = Data(base64Encoded: self)!
+//        
+//        var decrypted:[UInt8]?
+//        do {    
+//            decrypted = try AES(key: key.bytes, blockMode: CBC(iv: iv.bytes), padding: .pkcs7).decrypt([UInt8](data))
+//            
+//        } catch  {
+//            return nil
+//        }
+//        
+//        let decryptedData = Data(decrypted!)
+//        return String(bytes: decryptedData.bytes, encoding: .utf8)
+//        
+//    }
     
     
     

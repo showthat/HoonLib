@@ -26,17 +26,16 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/showthat/HoonLib.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '11.0'
   s.swift_version = '4.0'
   
   s.source_files = 'HoonLib/Classes/**/*'
   
-  s.dependency 'CryptoSwift'
+#  s.dependency 'CryptoSwift'
   # s.dependency 'AFNetworking', '~> 2.3'
   
   s.resource_bundles = {
-     'HoonLib' => ['HoonLib/Assets/*.png', 
-                   'HoonLib/Assets/*.xib',
+     'HoonLib' => ['HoonLib/Assets/**/*',
                    'HoonLib/Classes/**/*.xib']
   }
 

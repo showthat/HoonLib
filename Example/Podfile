@@ -12,5 +12,5 @@ target 'HoonLib_Example' do
     pod 'Nimble-Snapshots' , '~> 6.3.0'
   end
   
-  pod 'CryptoSwift'
+#  pod 'CryptoSwift'
 end

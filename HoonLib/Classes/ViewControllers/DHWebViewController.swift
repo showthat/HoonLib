@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WebKit
 
 class DHWebViewController: UIViewController {
 
@@ -24,12 +25,16 @@ class DHWebViewController: UIViewController {
         self.init()
     }
     
+    var loadUrl:String = ""
     
-    
-    
+    @IBOutlet fileprivate weak var wkWebView: WKWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let url = URL.init(string: loadUrl) {
+            wkWebView.load(URLRequest.init(url: url))
+        }
     }
 
     

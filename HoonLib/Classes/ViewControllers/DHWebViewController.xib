@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <deployment version="4352" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DHWebViewController" customModule="HoonLib" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="wkWebView" destination="TBH-cO-LD0" id="vkU-ZA-XuT"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -21,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XvV-hd-g4Q">
-                    <rect key="frame" x="15" y="35" width="345" height="45"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
                     <color key="backgroundColor" red="0.3411764706" green="0.4549019608" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="dAf-pG-Hn5"/>
@@ -33,23 +32,27 @@
                         <action selector="clickedBackButton:" destination="-1" eventType="touchUpInside" id="Q9a-sx-j5g"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이거슨 테스트22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDs-cB-Ay7">
-                    <rect key="frame" x="131.5" y="323" width="112.5" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TBH-cO-LD0">
+                    <rect key="frame" x="0.0" y="45" width="375" height="622"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <wkWebViewConfiguration key="configuration">
+                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                        <wkPreferences key="preferences"/>
+                    </wkWebViewConfiguration>
+                </wkWebView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="pDs-cB-Ay7" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="CSb-3D-wnV"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XvV-hd-g4Q" secondAttribute="trailing" constant="15" id="TFo-ux-csO"/>
-                <constraint firstItem="pDs-cB-Ay7" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Xcl-NT-30d"/>
-                <constraint firstItem="XvV-hd-g4Q" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="ZOF-Bl-4u0"/>
-                <constraint firstItem="XvV-hd-g4Q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="pz1-eq-vZW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XvV-hd-g4Q" secondAttribute="trailing" id="TFo-ux-csO"/>
+                <constraint firstItem="XvV-hd-g4Q" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ZOF-Bl-4u0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="TBH-cO-LD0" secondAttribute="bottom" id="ZeA-e1-HNl"/>
+                <constraint firstItem="TBH-cO-LD0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="iXJ-f7-ySc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TBH-cO-LD0" secondAttribute="trailing" id="neJ-ET-ebl"/>
+                <constraint firstItem="XvV-hd-g4Q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pz1-eq-vZW"/>
+                <constraint firstItem="TBH-cO-LD0" firstAttribute="top" secondItem="XvV-hd-g4Q" secondAttribute="bottom" id="tTy-he-HTQ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="-108" y="72"/>
+            <point key="canvasLocation" x="-370" y="-81"/>
         </view>
     </objects>
 </document>
