@@ -13,6 +13,8 @@ public class DHViewControllerPresenter {
     
     public func showWebViewController(parent:UIViewController, url:String, isPush:Bool = false, animated:Bool = true, completion: (() -> Void)? = nil) {
         
+        print("bundle : \(Bundle.main.bundleIdentifier)")
+        
         let vc = DHWebViewController.init(url:url)
         vc.loadUrl = url
         vc.modalPresentationStyle = .overFullScreen

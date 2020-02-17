@@ -11,6 +11,7 @@ import WebKit
 
 import HoonLib
 
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var wkWebView: WKWebView!
@@ -29,7 +30,7 @@ class ViewController: UIViewController {
         wkWebView.enableConsoleLog()
         wkWebView.customUserAgent = "android"
         
-        let siteUrl:String = "https://mobon.net/main/m2/"
+        let siteUrl:String = "http://scm-enliple.iptime.org:8884/index.html?mallId=205"
 
         if let url = URL(string: siteUrl) {
             wkWebView.load(URLRequest.init(url: url))
@@ -62,6 +63,9 @@ class ViewController: UIViewController {
         
         
         chatbotButton.showingUrl = "https://bot.istore.camp/index.html?mallId=1" 
+        
+//        IBotSDK.shared.setUp(apiKey: "1")
+//        IBotSDK.shared.showIBotButton(in: self.view)
     }
     
     override func viewWillAppear(_ animated: Bool) {

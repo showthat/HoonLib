@@ -31,15 +31,33 @@
                                     <constraint firstAttribute="height" constant="50" id="mS3-es-ong"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RUX-vg-zNs" customClass="DHChatBotButton" customModule="HoonLib">
+                                <rect key="frame" x="10" y="130" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="qk5-QP-OAO"/>
+                                    <constraint firstAttribute="width" constant="50" id="yPX-Wn-S40"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oyo-xk-Pkn" customClass="DHChatBotButton" customModule="HoonLib">
+                                <rect key="frame" x="345" y="210" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="AA1-eN-4PE"/>
+                                    <constraint firstAttribute="width" constant="20" id="jAg-tc-bZX"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="N9n-BM-AIV" firstAttribute="trailing" secondItem="YpI-hN-doD" secondAttribute="trailing" constant="10" id="0Ti-7b-Mdl"/>
                             <constraint firstItem="aek-Z4-Orv" firstAttribute="leading" secondItem="N9n-BM-AIV" secondAttribute="leading" id="7oW-V7-0pZ"/>
+                            <constraint firstItem="RUX-vg-zNs" firstAttribute="leading" secondItem="N9n-BM-AIV" secondAttribute="leading" constant="10" id="Brh-73-1gk"/>
                             <constraint firstItem="aek-Z4-Orv" firstAttribute="top" secondItem="N9n-BM-AIV" secondAttribute="top" id="GpD-9s-Zgl"/>
                             <constraint firstItem="YpI-hN-doD" firstAttribute="top" secondItem="N9n-BM-AIV" secondAttribute="top" constant="60" id="J3t-WP-IKq"/>
+                            <constraint firstItem="N9n-BM-AIV" firstAttribute="trailing" secondItem="Oyo-xk-Pkn" secondAttribute="trailing" constant="10" id="eKn-cZ-vxp"/>
                             <constraint firstItem="N9n-BM-AIV" firstAttribute="bottom" secondItem="aek-Z4-Orv" secondAttribute="bottom" id="fJP-vT-obg"/>
                             <constraint firstItem="N9n-BM-AIV" firstAttribute="trailing" secondItem="aek-Z4-Orv" secondAttribute="trailing" id="mX9-tB-BO8"/>
+                            <constraint firstItem="Oyo-xk-Pkn" firstAttribute="top" secondItem="YpI-hN-doD" secondAttribute="bottom" constant="100" id="tAw-Yr-wc5"/>
+                            <constraint firstItem="RUX-vg-zNs" firstAttribute="top" secondItem="N9n-BM-AIV" secondAttribute="top" constant="130" id="tes-r2-6a7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="N9n-BM-AIV"/>
                     </view>

@@ -1,8 +1,10 @@
 use_frameworks!
+plugin 'cocoapods-fix-react-native'
 
 target 'HoonLib_Example' do
-  pod 'HoonLib', :path => '../'
 
+  pod 'HoonLib', :path => '../'
+  
   target 'HoonLib_Tests' do
     inherit! :search_paths
 
@@ -12,5 +14,4 @@ target 'HoonLib_Example' do
     pod 'Nimble-Snapshots' , '~> 6.3.0'
   end
   
-#  pod 'CryptoSwift'
 end
